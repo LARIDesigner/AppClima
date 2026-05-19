@@ -24,7 +24,7 @@ export function useLocalizacao() {
           params: {
             lat: latitude,
             lon: longitude,
-            appid: 'SUA_CHAVE_AQUI',
+            appid: process.env.EXPO_PUBLIC_CHAVE_API!,
             units: 'metric',
             lang: 'pt_br',
           },

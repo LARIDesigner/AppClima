@@ -12,8 +12,8 @@ export function BarraDeBusca({ valor, aoMudar, aoSubmeter }: Props) {
     <View style={estilos.container}>
       <TextInput
         style={estilos.entrada}
-        placeholder="Digite uma cidade... ex: Salvador,BR"
-        placeholderTextColor="#aaa"
+        placeholder="Buscar cidade... ex: Salvador,BR"
+        placeholderTextColor="#555555"
         value={valor}
         onChangeText={aoMudar}
         onSubmitEditing={() => aoSubmeter(valor)}
@@ -24,14 +24,16 @@ export function BarraDeBusca({ valor, aoMudar, aoSubmeter }: Props) {
 }
 
 const estilos = StyleSheet.create({
-  container: { marginBottom: 12 },
+  container: {
+    marginBottom: 12,
+  },
   entrada: {
-    backgroundColor: '#16213e',
-    color: '#fff',
+    backgroundColor: '#1A1A1A',
+    color: '#FFFFFF',
     padding: 14,
-    borderRadius: 10,
+    borderRadius: 8,
     fontSize: 15,
     borderWidth: 1,
-    borderColor: '#4A90D9',
+    borderColor: '#2A2A2A',
   },
 });

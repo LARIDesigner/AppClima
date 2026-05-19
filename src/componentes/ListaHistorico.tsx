@@ -10,7 +10,7 @@ interface Props {
 export function ListaHistorico({ itens, aoClicar }: Props) {
   return (
     <View style={estilos.container}>
-      <Text style={estilos.titulo}>🕓 Histórico de buscas</Text>
+      <Text style={estilos.titulo}>Buscas recentes</Text>
       <FlatList
         data={itens}
         keyExtractor={(item) => item.id.toString()}
@@ -19,7 +19,9 @@ export function ListaHistorico({ itens, aoClicar }: Props) {
             style={estilos.item}
             onPress={() => aoClicar(item.cidade)}
           >
-            <Text style={estilos.nomeCidade}>{item.cidade}, {item.pais}</Text>
+            <Text style={estilos.nomeCidade}>
+              {item.cidade}, {item.pais}
+            </Text>
             <Text style={estilos.data}>{item.buscadoEm}</Text>
           </TouchableOpacity>
         )}
@@ -29,16 +31,32 @@ export function ListaHistorico({ itens, aoClicar }: Props) {
 }
 
 const estilos = StyleSheet.create({
-  container: { marginTop: 24 },
-  titulo: { fontSize: 16, fontWeight: 'bold', color: '#fff', marginBottom: 8 },
-  item: {
-    backgroundColor: '#16213e',
-    padding: 12,
-    borderRadius: 10,
-    marginBottom: 8,
-    borderLeftWidth: 3,
-    borderLeftColor: '#4A90D9',
+  container: {
+    marginTop: 28,
   },
-  nomeCidade: { color: '#fff', fontSize: 15 },
-  data: { color: '#aaa', fontSize: 12, marginTop: 2 },
+  titulo: {
+    fontSize: 13,
+    fontWeight: '600',
+    color: '#AAAAAA',
+    letterSpacing: 1,
+    textTransform: 'uppercase',
+    marginBottom: 10,
+  },
+  item: {
+    backgroundColor: '#1A1A1A',
+    padding: 14,
+    borderRadius: 8,
+    marginBottom: 8,
+    borderWidth: 1,
+    borderColor: '#2A2A2A',
+  },
+  nomeCidade: {
+    color: '#FFFFFF',
+    fontSize: 15,
+  },
+  data: {
+    color: '#555555',
+    fontSize: 11,
+    marginTop: 2,
+  },
 });
